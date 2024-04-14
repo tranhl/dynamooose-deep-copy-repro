@@ -1,0 +1,24 @@
+{
+  "name": "dynamoose-deep-copy-repro",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "seed": "AWS_REGION=us-east-1 AWS_ACCESS_KEY_ID=AKID AWS_SECRET_ACCESS_KEY=SECRET node seed.js",
+    "profile": "AWS_REGION=us-east-1 AWS_ACCESS_KEY_ID=AKID AWS_SECRET_ACCESS_KEY=SECRET 0x --open --output-dir profiles unpatched.js",
+    "profile:patched": "AWS_REGION=us-east-1 AWS_ACCESS_KEY_ID=AKID AWS_SECRET_ACCESS_KEY=SECRET 0x --open --output-dir profiles patched.js",
+    "dynamodb": "docker run -p 8000:8000 amazon/dynamodb-local -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -inMemory"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dynamoose": "^4.0.0",
+    "dynamoose-patched": "link:dynamoose-patched",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "0x": "^5.7.0",
+    "@vercel/style-guide": "^6.0.0",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5"
+  }
+}
